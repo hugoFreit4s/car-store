@@ -1,16 +1,17 @@
-package com.example.car_store.model;
+package com.example.car_store.dto;
 
-public class Car {
+public class DetailedCarInfoResponseDTO {
+    private int ID;
     private String brand;
     private String model;
     private double price;
     private int manufactureYear;
     private String description;
     private int horsepower;
-    private double weight;
-    private Owner owner;
+    private int weight;
 
-    public Car(String brand, String model, double price, int manufactureYear, String description, int horsepower, double weight, Owner owner) {
+    public DetailedCarInfoResponseDTO(int ID, String brand, String model, double price, int manufactureYear, String description, int horsepower, int weight) {
+        this.ID = ID;
         this.brand = brand;
         this.model = model;
         this.price = price;
@@ -18,7 +19,14 @@ public class Car {
         this.description = description;
         this.horsepower = horsepower;
         this.weight = weight;
-        this.owner = owner;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getBrand() {
@@ -69,19 +77,11 @@ public class Car {
         this.horsepower = horsepower;
     }
 
-    public double getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
-    }
-
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
     }
 }
